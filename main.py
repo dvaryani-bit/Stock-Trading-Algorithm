@@ -77,7 +77,7 @@ data2 = data[data['Moving Variation Coefficient'] >= 0.8]
 data3 = data[data['Moving Variation Coefficient'] <= -0.7]
 
 
-### resisitance
+### resistance
 model_r = LinearRegression()
 x = []
 c = 0
@@ -96,9 +96,9 @@ for i in data2.index.values:
     data2.loc[i, 'Fit'] = c*model_r.coef_ + model_r.intercept_
     c += 1
 
-x_resistance = [data.iloc[0]['Date'], data2.iloc[-1]['Date']]
-print(x_resistance)
-y_resistance = [model_r.intercept_, data2.iloc[-1]['Price']]
+#x_resistance = [data.iloc[0]['Date'], data2.iloc[-1]['Date']]
+#print(x_resistance)
+#y_resistance = [model_r.intercept_, data2.iloc[-1]['Price']]
 
 #### support
 
